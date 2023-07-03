@@ -1,11 +1,21 @@
 import time
 print("12345")
-def main():
-    print("main")
 
-def loop():
-    print("loop")
-    time.sleep(1)
-    loop()
+class Main:
+    
+    loopIndex = 0
 
-loop()
+    def loop(self):
+        print("loop:" + str(loopIndex))
+        time.sleep(1)
+        loopIndex+=1
+        self.loop()
+    def main():
+        print("main")
+        loop()
+
+    
+p = Main()
+p.loop()
+#print(p)
+#loop()
